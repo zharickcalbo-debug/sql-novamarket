@@ -86,3 +86,37 @@ Para la actualización de los archivos SQL que me pediste, usamos este flujo por
 1. No perdamos el progreso.
 2. Podamos volver atrás si algo falla.
 3. Tengas una copia segura en GitHub de todo tu aprendizaje.
+
+---
+
+## 6. Saber dónde estás parado (¡No te confundas!)
+
+Es vital saber a quién le estás hablando en la terminal:
+
+### 💻 Si veas `macbookpro@Username %` (o similar):
+*   **Estás en:** La Terminal de Mac (el sistema operativo).
+*   **Comandos permitidos:** `git status`, `git add`, `git push`.
+*   **Aquí es donde:** Abres la base de datos con `sqlite3 novamarket_v3.db`.
+
+### 🗄️ Si veas `sqlite>`:
+*   **Estás en:** El Motor de Base de Datos (SQLite3).
+*   **Comandos permitidos:** `SELECT ... ;`, `.tables`, `.exit`.
+*   **ERROR COMÚN:** Intentar usar `git` aquí no funcionará. Debes salir con `.exit` primero.
+
+---
+
+## 7. El "Branch" (La Línea Temporal)
+
+Es como un universo paralelo para tu código:
+*   `main`: Es el tronco principal del árbol (el juego oficial).
+*   **Branches:** Son ramas donde puedes "experimentar" sin romper el tronco principal.
+
+---
+
+## 8. Local vs. Remoto (Borrador vs. Galería)
+
+*   **Local (Tu PC):** Tu taller privado. Aquí haces `git commit`. Solo tú lo ves.
+*   **Remoto (GitHub):** La galería pública. Aquí haces `git push`. Todo el mundo lo ve.
+
+> [!IMPORTANT]
+> **El Punto y Coma (`;`):** En SQL es como el "punto final". Si no lo pones, SQLite se queda esperando a que termines la frase. ¡No lo olvides!
