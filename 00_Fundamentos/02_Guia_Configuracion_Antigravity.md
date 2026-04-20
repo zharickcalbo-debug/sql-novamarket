@@ -141,7 +141,7 @@ Antes de crear el archivo, debes estar "parado" dentro de la carpeta de la sesi�
     1.  Ejecuta el script de Python proporcionado (ej: `05_Puente_S07.py`) para transformar el Excel en una base de datos `.db`.
 
 > [!IMPORTANT]
-> **REGLA DE ORO DE LOS NOMBRES:** Solo se subirán a GitHub las bases de datos con los nombres oficiales (`01_Base_Datos_S06.db` o `Novamarket_S07.db`). Si le pones otro nombre (ej: `mi_base_datos.db`), Git la ignorará y el profesor no podrá calificarte.
+> **REGLA DE ORO DE LOS NOMBRES:** Para que el profesor identifique tu trabajo, **debes incluir tu nombre** en el archivo (ej: `01_Base_Datos_S06_TuNombre.db` o `Novamarket_S07_TuNombre.db`). Solo los archivos que empiecen con estos nombres oficiales se subirán a GitHub; cualquier otro nombre será ignorado.
 
 
 ---
