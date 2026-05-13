@@ -20,68 +20,44 @@ PRAGMA table_info('DimProducto');
 --ya ejecutado
 -- ══ BLOQUE C — Insertar y Consultar Datos ══════════════════════
 -- Escribe aquí los INSERT del Bloque C según la guía:
+DELETE FROM DimProducto;
+
 INSERT INTO DimProducto (ProductoID, Nombre, Categoria, Precio, Costo)
-VALUES (
-        1,
-        'Laptop Gamer Z',
-        'Laptops',
-        2500.00,
-        1800.00
-    ),
-    (
-        2,
-        'Smartphone Pro',
-        'Smartphones',
-        1200.00,
-        800.00
-    ),
-    (
-        3,
-        'Smartwatch Q',
-        'Wearables',
-        300.00,
-        180.00
-    ),
-    (
-        4,
-        'Audifonos Bluetooth',
-        'Audio',
-        150.00,
-        90.00
-    );
+VALUES 
+    (1, 'Laptop Gamer Z', 'Laptops', 2500.00, 1800.00),
+    (2, 'Smartphone Pro', 'Smartphones', 1200.00, 800.00),
+    (3, 'Smartwatch Q', 'Wearables', 300.00, 180.00),
+    (4, 'Audifonos Bluetooth', 'Audio', 150.00, 90.00);
 SELECT COUNT(*)
 FROM DimProducto;
 --Bloque ejecutado
 --Ver Margen
 SELECT Nombre AS Producto,
-    Precio,
-    Costo,
-    (Precio - Costo) AS Margen_Bruto,
-    ROUND((Precio - Costo) * 100.0 / Precio, 2) AS Margen_Pct
+       (Precio - Costo) AS Margen_Bruto,
+       ROUND((Precio - Costo) * 100.0 / Precio, 2) AS Margen_Pct
 FROM DimProducto
-ORDER BY Margen_Pct DESC;
+ORDER BY Margen_Pct DESC; 
 -- ══ BLOQUE D — DimCiudad + Foreign Key (Desafío) ═══════════════
 -- Escribe aquí la creación de DimCiudad y FactVentas_Demo:
+DROP TABLE IF EXISTS DimCiudad;
+
 CREATE TABLE DimCiudad (
     CiudadID INTEGER PRIMARY KEY,
     Nombre VARCHAR(100) NOT NULL,
     Region VARCHAR(50) NOT NULL,
     Factor_Envio DECIMAL(4, 2) NOT NULL,
-    Es_Zona_Remota INTEGER DEFAULT 0 -- 0 = no, 1 = sí
+    Es_Zona_Remota INTEGER DEFAULT 0
 );
-INSERT INTO DimCiudad (
-        CiudadID,
-        Nombre,
-        Region,
-        Factor_Envio,
-        Es_Zona_Remota
-    )
-VALUES (1, 'Bogotá', 'Centro', 1.00, 0),
+
+INSERT INTO DimCiudad (CiudadID, Nombre, Region, Factor_Envio, Es_Zona_Remota)
+VALUES 
+    (1, 'Bogotá', 'Centro', 1.00, 0),
     (2, 'Medellín', 'Andina', 1.20, 0),
     (3, 'Cali', 'Pacífico', 1.30, 0),
     (4, 'Barranquilla', 'Caribe', 1.50, 0),
     (5, 'Cartagena', 'Caribe', 1.60, 0),
     (6, 'Leticia', 'Amazonia', 8.00, 1);
+
 SELECT *
 FROM DimCiudad
 ORDER BY Factor_Envio DESC;
